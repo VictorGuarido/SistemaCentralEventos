@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Listar Eventos</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="navbar">
+            <a href="/form"><button>Cadastrar</button></a>
+            <a href="/listar"><button>Listar todos eventos</button></a>
+            <a href="/buscar"><button>Buscar por nome</button></a>
+        </header>
+
+        <h1>Veja a lista de eventos!</h1>
+
+        <div th:each="evento : ${eventos}" class="formulario">
+            <div>
+                <p>Nome do evento:
+                    <a th:href="@{'/evento/' + ${evento.nome}}">
+                        <span th:text="${evento.nome}"></span>
+                    </a>
+                </p>
+                <img th:src="${evento.imagem}" width="20%">
+                <p><strong>Descrição: </strong> <span th:text="${evento.descricao}"></span></p>
+                <p><strong>Tipo: </strong> <span th:text="${evento.tipo}"></span></p>
+                <p><strong>Data: </strong> <span th:text="${evento.data}"></span></p>
+                <p><strong>Horario de Inicio: </strong> <span th:text="${evento.horaI}"></span></p>
+                <p><strong>Horario de Finalização: </strong> <span th:text="${evento.horaF}"></span></p>
+                <p><strong>País: </strong> <span th:text="${evento.pais}"></span></p>
+                <p><strong>Estado: </strong> <span th:text="${evento.estado}"></span></p>
+                <p><strong>Bairro: </strong> <span th:text="${evento.bairro}"></span></p>
+                <p><strong>Rua: </strong> <span th:text="${evento.rua}"></span></p>
+                <p><strong>Número: </strong> <span th:text="${evento.numero}"></span></p>
+            </div>
+        </div>
+        <a href="voltar"> <button>Voltar</button> </a>
+    </body>
+</html>

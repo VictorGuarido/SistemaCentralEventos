@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header class="navbar">
+            <a href="/form"><button>Cadastrar</button></a>
+            <a href="/listar"><button>Listar todos eventos</button></a>
+        </header>
+        <form method="get" action="/evento" class="formulario">
+            <label> Procure pelo nome:  </label>
+            <input type="text" name="nome">
+            <button>Procurar</button>
+        </form>
+
+        <p th:text="${msg}"></p>
+    </body>
+</html>
